@@ -1,5 +1,6 @@
 package musichub.main;
 import musichub.business.*;
+import musichub.util.*;
 import java.util.*;
 
 import java.beans.XMLEncoder;
@@ -19,6 +20,8 @@ public class Main
 		String choice = scan.nextLine();
 		
 		String albumTitle = null;
+		Serveur serv = new Serveur();
+		Client clt = new Client();
 		
 		if (choice.length() == 0) System.exit(0);						
 		
