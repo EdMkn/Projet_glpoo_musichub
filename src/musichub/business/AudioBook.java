@@ -2,11 +2,27 @@ package musichub.business;
 
 import java.io.*;
 import org.w3c.dom.*;
-
+/**
+* descendant of the class AudioElement
+*
+* @version 2.0
+*
+* @see AudioElement
+* @auteur Najmi Mehdi.
+*/
 public class AudioBook extends AudioElement {
 	private Language language;
 	private Category category;
+	/**
+	* constructor of the LivreAudio class.
 	
+	* @param Langue Language of audiobook
+	* @param categorie  category of audiobook
+	*
+	* @see
+	AudioElement class # Title, Duration and Content
+	* @author Najmi Mehdi
+	*/
 	public AudioBook (String title, String artist, int lengthInSeconds, String uid, String content, String language, String category) {
 		super (title, artist, lengthInSeconds, uid, content);
 		this.setLanguage(language);
@@ -27,11 +43,21 @@ public class AudioBook extends AudioElement {
 			throw ex;
 		}
 	}
-	
+	/**
+	* allows to know the language
+	*
+	* @return returns the language of the audiobook
+	* @author Najmi Mehdi
+	*/
 	public Language getLanguage() {
 		return this.language;
 	}
-	
+	/**
+	* allows to know the category
+	*
+	* @return returns the category of the audiobook
+	* @author Najmi Mehdi
+	*/
 	public Category getCategory() {
 		return this.category;
 	}

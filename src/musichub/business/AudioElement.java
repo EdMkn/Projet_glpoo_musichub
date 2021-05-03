@@ -2,14 +2,30 @@ package musichub.business;
 
 import java.util.*;
 import org.w3c.dom.*;
-
+/**
+* mother class Song and AudioBook.
+*
+* @version 1.0
+*
+* @author Najmi Mehdi
+*/
 public abstract class AudioElement {
 	protected String  	title;
 	protected String 	artist;
 	protected int    	lengthInSeconds;
 	protected UUID    	uuid;
 	protected String	content;
-	
+
+	/**
+    * constructor of the AudioElement class.
+    *
+    * @param Titre title of the musical element
+	* @param LengthInSeconds duration of the musical element
+	* @param Artist artist of the musical element
+	* @param Contenu content of the musical element
+	* @author Najmi Mehdi.
+	*/
+
 	public AudioElement (String title, String artist, int lengthInSeconds, String id, String content) {
 		this.title = title;
 		this.artist = artist;
@@ -48,14 +64,26 @@ public abstract class AudioElement {
 		}
 	}
 	
+	
 	public UUID getUUID() {
 		return this.uuid;
 	}
 	
+	/**
+	* allows to know artist
+	*
+	* @return returns the artist
+	* @author Najmi Mehdi
+	*/
 	public String getArtist() {
 		return this.artist;
 	}
-
+	/**
+	* allows to know title
+	*
+	* @return returns the title
+	* @author Najmi Mehdi
+	*/
 	public String getTitle() {
 		return this.title;
 	}

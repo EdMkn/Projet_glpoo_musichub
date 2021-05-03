@@ -1,11 +1,24 @@
 package musichub.business;
 
 import org.w3c.dom.*;
-
+/**
+* class inherited from AudioElement class.
+*
+* @version 2.0
+*
+* @see AudioElement
+* @author MAKON Manyim Ma.
+*/
 
 public class Song extends AudioElement {
 	private Genre genre;
-	
+	/**
+	* constructor of the Chanson class.
+	*
+	* @param genre genre of song
+    * @see AudioElement class # Title, Duree and Contenu
+    * @author MAKON Manyim Ma
+    */
 	public Song (String title, String artist, int length, String uid, String content, String genre) {
 		super (title, artist, length, uid, content);
 		this.setGenre(genre);
@@ -48,7 +61,12 @@ public class Song extends AudioElement {
 				break;				
 		}
 	} 
-
+/**
+	* allows to know the genre
+	*
+	* @return returns the genre
+	* @author MAKON Manyim Ma
+	*/
 	public String getGenre () {
 		return genre.getGenre();
 	}

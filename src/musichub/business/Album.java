@@ -3,7 +3,14 @@ package musichub.business;
 import java.util.*;
 import org.w3c.dom.*;
 import java.text.*;
-
+/**
+* the Application class launch the Album class
+*
+* @version 1.0
+*
+* @see the Application class
+* @author Najmi Mehdi.
+*/
 
 
 public class Album {
@@ -13,7 +20,15 @@ public class Album {
 	private UUID uuid;
 	private Date date;
 	private ArrayList<UUID> songsUIDs;
-
+/**
+    * constructor of the Album class.
+    *
+	*@param Artiste Artist of the Album
+    * @param Titre title of the Album
+	* @param Date Dated of the Album 
+	* @param LengthInSeconds Length of the Album
+	* @author Najmi Mehdi.
+	*/
 	public Album (String title, String artist, int lengthInSeconds, String id, String date, ArrayList<UUID> songsUIDs) {
 		this.title = title;
 		this.artist = artist;

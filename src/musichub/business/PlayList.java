@@ -2,12 +2,26 @@ package musichub.business;
 
 import java.util.*;
 import org.w3c.dom.*;
-
+/**
+* the Application class launch the PlayLIst class
+*
+* @version 1.0
+*
+* @see the Application class
+* @author Najmi Mehdi.
+*/
 public class PlayList {
 	private String title;
 	private UUID uuid;
 	private ArrayList<UUID> elementUUIDs;
-
+/**
+    * constructor of the PlayList class.
+    *
+	
+    * @param Titre title of the Album
+	* @param Id id of the Album
+	* @author Najmi Mehdi.
+	*/
 	public PlayList (String title, String id, ArrayList<UUID> elementUUIDs) {
 		this.title = title;
 		this.uuid = UUID.fromString(id);
@@ -32,7 +46,12 @@ public class PlayList {
 	public String getTitle() {
 		return title;
 	}
-	
+	/**
+	* allows to know the title
+	*
+	* @return returns the title
+	* @author Najmi Mehdi
+	*/
 	public PlayList (Element xmlElement) throws Exception {
 		try {
 			this.title = xmlElement.getElementsByTagName("title").item(0).getTextContent();
