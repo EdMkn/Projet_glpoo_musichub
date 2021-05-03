@@ -1,5 +1,6 @@
 package musichub.main;
 import musichub.business.*;
+import musichub.util.*;
 import java.util.*;
 
 import java.beans.XMLEncoder;
@@ -52,27 +53,27 @@ public class Main
 				break;
 				case 'c':
 					// add a new song
-                    console.addSong();
-                    console.printAvailableCommands();
-                    choice = scan.nextLine();
-                break;
+          console.addSong();
+          console.printAvailableCommands();
+          choice = scan.nextLine();
+          break;
 				case 'a':
 					// add a new album
 					console.addAlbum();
-                    console.printAvailableCommands();
-                    choice = scan.nextLine();
+          console.printAvailableCommands();
+          choice = scan.nextLine();
 				break;
 				case '+':
 					//add a song to an album:
 					console.addSgToAlbum();
 					console.printAvailableCommands();
-                    choice = scan.nextLine();
+          choice = scan.nextLine();
 					break;
 				case 'l':
 					// add a new audiobook
 					console.addAudioBook();
-                    console.printAvailableCommands();
-                    choice = scan.nextLine();
+          console.printAvailableCommands();
+          choice = scan.nextLine();
 				break;
 				case 'p':
 					//create a new playlist from existing elements
