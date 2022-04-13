@@ -1,2 +1,7 @@
 # Projet_glpoo_musichub
-Projet Jqvq s2
+Projet Java <br> 
+<b> cette application faite en java permet les opérations suivantes: </b>
+<ul>
+  <li> Ajout/suppression de chansons, Playlists, et albums</li>
+  <li> Modification des playlists et albums</li>
+</ul>
