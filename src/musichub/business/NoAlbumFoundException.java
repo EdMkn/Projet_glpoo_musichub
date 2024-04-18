@@ -11,7 +11,7 @@ import java.lang.Exception;
 public class NoAlbumFoundException extends Exception {
 /**
 	* constructor of the NoAlbumFoundException class.
-	* @param Message message from AlbumException
+	* @param msg message from AlbumException
 	* @author MAKON Manyim Ma
 	*/
 	public NoAlbumFoundException (String msg) {

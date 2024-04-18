@@ -1,35 +1,37 @@
 package musichub.business;
 
 import org.w3c.dom.*;
+
 /**
-* class inherited from AudioElement class.
-*
-* @version 2.0
-*
-* @see AudioElement
-* @author MAKON Manyim Ma.
-*/
+ * class inherited from AudioElement class.
+ *
+ * @version 2.0
+ *
+ * @see AudioElement
+ * @author MAKON Manyim Ma.
+ */
 
 public class Song extends AudioElement {
 	private Genre genre;
+
 	/**
-	* constructor of the Chanson class.
-	*
-	* @param genre genre of song
-    * @see AudioElement class # Title, Duree and Contenu
-    * @author MAKON Manyim Ma
-    */
-	public Song (String title, String artist, int length, String uid, String content, String genre) {
-		super (title, artist, length, uid, content);
+	 * constructor of the Chanson class.
+	 *
+	 * @param genre genre of song
+	 * @see AudioElement class # Title, Duree and Contenu
+	 * @author MAKON Manyim Ma
+	 */
+	public Song(String title, String artist, int length, String uid, String content, String genre) {
+		super(title, artist, length, uid, content);
 		this.setGenre(genre);
 	}
-	
-	public Song (String title, String artist, int length, String content, String genre) {
-		super (title, artist, length, content);
+
+	public Song(String title, String artist, int length, String content, String genre) {
+		super(title, artist, length, content);
 		this.setGenre(genre);
 	}
-	
-	public Song (Element xmlElement) throws Exception {
+
+	public Song(Element xmlElement) throws Exception {
 		super(xmlElement);
 		try {
 			this.setGenre(xmlElement.getElementsByTagName("genre").item(0).getTextContent());
@@ -37,8 +39,12 @@ public class Song extends AudioElement {
 			throw ex;
 		}
 	}
-	
-	public void setGenre (String genre) {	
+
+	/**
+	 * 
+	 * @param genre
+	 */
+	public void setGenre(String genre) {
 		switch (genre.toLowerCase()) {
 			case "jazz":
 			default:
@@ -58,34 +64,40 @@ public class Song extends AudioElement {
 				break;
 			case "rap":
 				this.genre = Genre.RAP;
-				break;				
+				break;
 		}
-	} 
-/**
-	* allows to know the genre
-	*
-	* @return returns the genre
-	* @author MAKON Manyim Ma
-	*/
-	public String getGenre () {
+	}
+
+	/**
+	 * allows to know the genre
+	 *
+	 * @return returns the genre
+	 * @author MAKON Manyim Ma
+	 */
+	public String getGenre() {
 		return genre.getGenre();
 	}
-	
-	public String toString() {
-		return super.toString() + ", Genre = " + getGenre() + "\n";
-	}	
-	
+
+	/**
+	 * exports a song to a xml file
+	 * @param document
+	 * @param parentElement
+	 */
 	public void createXMLElement(Document document, Element parentElement) {
 		// song element
-        Element song = document.createElement("song");
+		Element song = document.createElement("song");
 
 		super.createXMLElement(document, song);
-		
+
 		Element genreElement = document.createElement("genre");
-        genreElement.appendChild(document.createTextNode(genre.getGenre()));
-        song.appendChild(genreElement);
-		
+		genreElement.appendChild(document.createTextNode(genre.getGenre()));
+		song.appendChild(genreElement);
+
 		parentElement.appendChild(song);
 		return;
+	}
+
+	public String toString() {
+		return super.toString() + ", Genre = " + getGenre() + "\n";
 	}
 }

@@ -7,7 +7,6 @@ import org.w3c.dom.*;
 *
 * @version 1.0
 *
-* @see the Application class
 * @author Najmi Mehdi.
 */
 public class PlayList {
@@ -18,8 +17,8 @@ public class PlayList {
     * constructor of the PlayList class.
     *
 	
-    * @param Titre title of the Album
-	* @param Id id of the Album
+    * @param title title of the Album
+	* @param id id of the Album
 	* @author Najmi Mehdi.
 	*/
 	public PlayList (String title, String id, ArrayList<UUID> elementUUIDs) {
@@ -43,15 +42,16 @@ public class PlayList {
 		return elementUUIDs;
 	}
 	
-	public String getTitle() {
-		return title;
-	}
 	/**
 	* allows to know the title
 	*
 	* @return returns the title
 	* @author Najmi Mehdi
 	*/
+	public String getTitle() {
+		return title;
+	}
+	
 	public PlayList (Element xmlElement) throws Exception {
 		try {
 			this.title = xmlElement.getElementsByTagName("title").item(0).getTextContent();
@@ -92,7 +92,11 @@ public class PlayList {
 		}
 	}
 	
-	
+	/**
+	 * Exports a playlist to a XML file
+	 * @param document
+	 * @param parentElement
+	 */
 	public void createXMLElement(Document document, Element parentElement)
 	{
 		Element playlistElement = document.createElement("playlist");

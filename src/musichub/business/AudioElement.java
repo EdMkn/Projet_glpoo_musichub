@@ -19,10 +19,10 @@ public abstract class AudioElement {
 	/**
     * constructor of the AudioElement class.
     *
-    * @param Titre title of the musical element
-	* @param LengthInSeconds duration of the musical element
-	* @param Artist artist of the musical element
-	* @param Contenu content of the musical element
+    * @param title title of the musical element
+	* @param lengthInSeconds duration of the musical element
+	* @param artist artist of the musical element
+	* @param content content of the musical element
 	* @author Najmi Mehdi.
 	*/
 

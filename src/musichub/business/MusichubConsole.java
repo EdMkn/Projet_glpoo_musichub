@@ -44,6 +44,7 @@ public class MusichubConsole {
         } catch (NoAlbumFoundException ex) {
             System.out.println("No album found with the requested title " + ex.getMessage());
         }      
+        scan.close();
     }
     public void displaySgAlbum(){
         //songs of an album
@@ -57,6 +58,7 @@ public class MusichubConsole {
         } catch (NoAlbumFoundException ex) {
             System.out.println("No album found with the requested title " + ex.getMessage());
         }
+        scan.close();
     }
     public void displayAudiobookByAuthor(){
         //audiobooks ordered by author
@@ -78,6 +80,7 @@ public class MusichubConsole {
         int length = Integer.parseInt(scan.nextLine());
         System.out.println("Song content: "); 
         String content = scan.nextLine();
+        scan.close();
         Song s = new Song (title, artist, length, content, genre);
         theHub.addElement(s);
         System.out.println("New element list: ");
@@ -97,6 +100,7 @@ public class MusichubConsole {
         int aLength = Integer.parseInt(scan.nextLine());
         System.out.println("Album date as YYYY-DD-MM: "); 
         String aDate = scan.nextLine();
+        scan.close();
         Album a = new Album(aTitle, aArtist, aLength, aDate);
         theHub.addAlbum(a);
         System.out.println("New list of albums: ");
@@ -123,6 +127,7 @@ public class MusichubConsole {
             System.out.println(al.getTitle());
         }
         String titleAlbum = scan.nextLine();
+        scan.close();
         try {
             theHub.addElementToAlbum(songTitle, titleAlbum);
         } catch (NoAlbumFoundException ex){
@@ -148,6 +153,7 @@ public class MusichubConsole {
         String bContent = scan.nextLine();
         System.out.println("AudioBook language (french, english, italian, spanish, german)");
         String bLanguage = scan.nextLine();
+        scan.close();
         AudioBook b = new AudioBook (bTitle, bArtist, bLength, bContent, bLanguage, bCategory);
         theHub.addElement(b);
         System.out.println("Audiobook created! New element list: ");
@@ -190,6 +196,7 @@ public class MusichubConsole {
             System.out.println("Type y to add a new one, n to end");
             choice = scan.nextLine();
         }
+        scan.close();
         System.out.println("Playlist created!");
     }
 
@@ -203,6 +210,7 @@ public class MusichubConsole {
             System.out.println(p.getTitle());
         }
         String plTitle = scan.nextLine();	
+        scan.close();
         try {
             theHub.deletePlayList(plTitle);
         }	catch (NoPlayListFoundException ex) {

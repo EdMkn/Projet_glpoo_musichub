@@ -42,8 +42,10 @@ public class Serveur  {
                  output.println(message);
                  output.flush();
               }
+
            }
         });
+        sc.close();
         envoi.start();
     
         Thread reception= new Thread(new Runnable() {
@@ -56,7 +58,6 @@ public class Serveur  {
                  while(message!=null){
                     System.out.println("Client : "+message);
                     message = input.readLine();
-                    Scanner scanner = new Scanner(System.in);
   
                  }
                  //sortir de la boucle si le client a déconecté

@@ -11,7 +11,7 @@ import java.lang.Exception;
 public class NoElementFoundException extends Exception {
 /**
 	* constructor of the NoElementFoundException class.
-	* @param Message message from AlbumException
+	* @param msg message from AlbumException
 	* @author MAKON Manyim Ma
 	*/
 	public NoElementFoundException (String msg) {

@@ -11,7 +11,7 @@ import java.lang.Exception;
 public class NoPlayListFoundException extends Exception {
 /**
 	* constructor of the NoPlayListFoundException class.
-	* @param Message message from AlbumException
+	* @param msg message from AlbumException
 	* @author Najmi Mehdi
 	*/
 	public NoPlayListFoundException (String msg) {

@@ -65,5 +65,6 @@ public class Client extends Serveur {
       } catch (IOException e) {
            e.printStackTrace();
       }
+      sc.close();
   }
 }

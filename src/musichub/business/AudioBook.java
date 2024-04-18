@@ -1,6 +1,4 @@
 package musichub.business;
-
-import java.io.*;
 import org.w3c.dom.*;
 /**
 * descendant of the class AudioElement
@@ -62,6 +60,10 @@ public class AudioBook extends AudioElement {
 		return this.category;
 	}
 	
+	/**
+	 * set the language of the audio book
+	 * @param language
+	 */
 	public void setLanguage (String language) {	
 		switch (language.toLowerCase()) {
 			case "english":
@@ -83,7 +85,11 @@ public class AudioBook extends AudioElement {
 				
 		}
 	}
-	
+
+	/**
+	 * set the category of the audi book
+	 * @param category
+	 */
 	public void setCategory (String category) {	
 		switch (category.toLowerCase()) {
 			case "youth":
@@ -105,12 +111,18 @@ public class AudioBook extends AudioElement {
 		}
 	}
 	
-	
+	/**
+	 * return a string version of this audiobook
+	 */
 	public String toString() {
 		return super.toString() + ", Language = " + getLanguage() + ", Category = " + getCategory() + "\n";
 	}
 	
-
+	/**
+	 * Export an audioBook toa xml element
+	 * @param document
+	 * @param parentElement
+	 */
 	public void createXMLElement(Document document, Element parentElement) {
 		// audiobook element
         Element audioBook = document.createElement("audiobook");
@@ -126,6 +138,5 @@ public class AudioBook extends AudioElement {
         audioBook.appendChild(categoryElement);
 		
 		parentElement.appendChild(audioBook);
-		return;
 	}
 }
