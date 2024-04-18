@@ -2,6 +2,7 @@
 ## Projet réalisé par 3 personnes
 # 2020 - 2021
 
+### Verifier le fichier musichub.java que l'on soit sur linux ou windows
 ### Commandes requises pour lancer le programme
 * Compile the process on Linux
 ```text
